@@ -3,300 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ウルサポ - 年収800万円以上を目指すフリーランス営業のための営業支援プラットフォーム</title>
+    <title>ウルサポ - 自由な働き方で年収1,000万円を目指す、フリーランス営業専門コミュニティ</title>
     <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap)" rel="stylesheet">
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap)" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         .hero-bg {
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('[https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop](https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop)');
-            background-size: cover;
-            background-position: center;
+            background-color: #1a202c;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(250, 204, 21, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(250, 204, 21, 0.1) 0%, transparent 40%);
         }
+        .brand-yellow { color: #FACC15; }
+        .bg-brand-yellow { background-color: #FACC15; }
+        .hover\:bg-brand-yellow-dark:hover { background-color: #EAB308; }
+        
         .cta-button {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         }
-        .feature-card {
-            transition: transform 0.3s, box-shadow 0.3s;
+        .flow-step::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 3rem;
+            bottom: -2rem;
+            width: 2px;
+            background-color: #e5e7eb;
+            z-index: -1;
         }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .flow-step:last-child::before {
+            display: none;
         }
-        .yellow-highlight {
-            background: linear-gradient(transparent 60%, #fef08a 60%);
+        .testimonial-card {
+            background: linear-gradient(135deg, #2d3748, #1a202c);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100 text-gray-800">
 
     <!-- ヘッダー -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                 <img src="[https://i.ibb.co/5WpB9dD/vantage-point-logo.png](https://i.ibb.co/5WpB9dD/vantage-point-logo.png)" alt="Vantage Point Logo" class="h-10 mr-3">
-                 <span class="text-2xl font-bold text-gray-800">ウルサポ</span>
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                 <img src="[https://i.ibb.co/5WpB9dD/vantage-point-logo.png](https://i.ibb.co/5WpB9dD/vantage-point-logo.png)" alt="Vantage Point Logo" class="h-8 sm:h-10">
+                 <span class="text-xl sm:text-2xl font-bold text-gray-900 tracking-wider">ウルサポ</span>
             </div>
-            <a href="#contact" class="cta-button bg-yellow-400 text-gray-900 font-bold py-2 px-6 rounded-full hover:bg-yellow-500 hidden md:inline-block">
-                まずは無料相談
+            <a href="#contact" class="cta-button bg-brand-yellow text-gray-900 font-bold py-2 px-5 sm:py-2 sm:px-6 rounded-full text-sm sm:text-base hover:bg-brand-yellow-dark">
+                無料相談会へ
             </a>
         </div>
     </header>
 
-    <!-- ファーストビュー -->
-    <section class="hero-bg text-white">
-        <div class="container mx-auto px-6 py-24 md:py-40 text-center">
-            <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">
-                年収<span class="text-yellow-400">800万円</span>以上を目指す<br>フリーランス営業のための<br class="md:hidden">営業支援プラットフォーム
-            </h1>
-            <p class="text-lg md:text-xl mb-8">
-                「孤独」と「不安定」から抜け出し、仲間と共に成長し続ける環境がここに。
-            </p>
-            <a href="#contact" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-10 text-lg rounded-full hover:bg-yellow-500">
-                初月から変わる！無料相談はこちら
-            </a>
-            <p class="mt-4 text-sm">初月解約保証あり。安心してスタートできます。</p>
-        </div>
-    </section>
-
-    <!-- 悩み・共感 -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                フリーランス営業の<span class="yellow-highlight">こんな悩み</span>ありませんか？
-            </h2>
-            <p class="text-center text-gray-600 mb-12">一つでも当てはまったら、ウルサポがあなたの力になります。</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">不安定な収入</h3>
-                    <p>完全歩合で収入が安定しない。来月の売上を考えると夜も眠れない...</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">孤独と不安</h3>
-                    <p>相談できる相手がいない。一人で壁にぶつかり、モチベーションが続かない...</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">スキルの陳腐化</h3>
-                    <p>新しい知識を学ぶ機会がない。自分の営業スキルに自信が持てない...</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h3 class="font-bold text-lg mb-2">雑務の多さ</h3>
-                    <p>請求書発行や契約手続き...。営業に集中したいのに、事務作業に追われる...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 解決策 -->
-    <section class="py-16 md:py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">
-                その悩み、<span class="text-yellow-400">ウルサポ</span>が全て解決します！
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="feature-card bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-3">顧客資産型の営業スタイル</h3>
-                    <p class="text-gray-600">売り切りではなく、継続受注で安定収入を確立。あなたの頑張りが未来の資産になります。</p>
-                </div>
-                <div class="feature-card bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-3">100以上の専門研修</h3>
-                    <p class="text-gray-600">HR領域のプロになるための研修が受け放題。常に最新のスキルをアップデートできます。</p>
-                </div>
-                <div class="feature-card bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-3">共に成長する仲間</h3>
-                    <p class="text-gray-600">孤独はもう終わり。メタバースオフィスやチーム制度で、全国の仲間と繋がれます。</p>
-                </div>
-                <div class="feature-card bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-3">営業活動への集中</h3>
-                    <p class="text-gray-600">見込み客提供や事務代行も。あなたは「売る」ことに全集中できます。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 実績 -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">
-                数字が証明する<span class="yellow-highlight">ウルサポの実力</span>
-            </h2>
-            <div class="grid lg:grid-cols-3 gap-8 items-center">
-                <div class="lg:col-span-2 bg-gray-100 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-4">報酬シミュレーション</h3>
-                    <p class="text-gray-600 mb-6">ウルサポの「顧客資産型」モデルなら、あなたの収入は着実に積み上がります。</p>
-                    <div class="flex justify-around items-end">
-                        <div class="text-center">
-                            <div class="bg-yellow-400 h-24 w-16 rounded-t-lg"></div>
-                            <p class="font-bold mt-2">1年目</p>
-                            <p class="text-sm text-gray-600">年収360万円</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="bg-yellow-400 h-48 w-16 rounded-t-lg"></div>
-                            <p class="font-bold mt-2">2年目</p>
-                            <p class="text-sm text-gray-600">年収674万円</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="bg-yellow-400 h-64 w-16 rounded-t-lg"></div>
-                            <p class="font-bold mt-2">3年目</p>
-                            <p class="text-sm text-gray-600">年収1,009万円</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-yellow-400 text-gray-900 p-8 rounded-lg shadow-xl">
-                    <p class="text-lg font-bold">2024年実績</p>
-                    <p class="text-5xl font-black my-2">¥5,522,124</p>
-                    <p class="font-bold">ジョイン1年以上の<br>メンバー平均報酬</p>
-                    <p class="text-xs mt-4">※研修フル参加、チーム所属など、本気で取り組んでいる方が対象です。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- お客様の声（1日のスケジュール） -->
-    <section class="py-16 md:py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-                理想の働き方を実現した<span class="yellow-highlight">先輩たちの声</span>
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Case 1 -->
-                <div class="feature-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <p class="text-yellow-500 font-bold">30代・一児のママ</p>
-                        <h3 class="text-xl font-bold mb-3">「子供のおかえり」が言える働き方</h3>
-                        <p class="text-gray-600 mb-4">働く時間も場所も自由。子どもの行事にも全部参加できるようになり、家族との時間が増えました。</p>
-                        <p class="font-bold">2024年報酬: 約650万円</p>
-                    </div>
-                </div>
-                <!-- Case 2 -->
-                <div class="feature-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <p class="text-yellow-500 font-bold">30代・既婚女性</p>
-                        <h3 class="text-xl font-bold mb-3">フリーランスとして自己実現を</h3>
-                        <p class="text-gray-600 mb-4">支社長としてチームを率い、多くの仲間と自己実現を目指す毎日。毎日が刺激的です。</p>
-                        <p class="font-bold">2024年報酬: 約1,100万円</p>
-                    </div>
-                </div>
-                <!-- Case 3 -->
-                <div class="feature-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <p class="text-yellow-500 font-bold">40代・独身男性</p>
-                        <h3 class="text-xl font-bold mb-3">メリハリのある自由な毎日</h3>
-                        <p class="text-gray-600 mb-4">平日の昼間からジムに行ったり、趣味の時間も満喫。会社員時代には考えられませんでした。</p>
-                        <p class="font-bold">2024年報酬: 約940万円</p>
-                    </div>
-                </div>
-            </div>
-             <div class="text-center mt-8">
-                <a href="#" class="text-yellow-600 hover:underline font-bold">もっと多くの先輩たちの声を見る →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 料金プラン -->
-    <section class="py-16 md:py-24 bg-white" id="price">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">料金プラン</h2>
-            <p class="text-gray-600 mb-12">未来への投資は、驚くほどシンプルです。</p>
-            <div class="inline-block bg-gray-50 border-2 border-yellow-400 rounded-lg shadow-2xl p-8 max-w-md mx-auto">
-                <h3 class="text-2xl font-bold mb-2">ウルサポ年会費</h3>
-                <p class="text-5xl font-black text-gray-900 mb-2">29,800<span class="text-xl font-bold">円/月</span></p>
-                <p class="text-gray-600 mb-6">(税込 32,780円)</p>
-                <ul class="text-left space-y-2 mb-8">
-                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>100以上の研修受け放題</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>案件相談・営業同行</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>見込み客リスト提供</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>事務作業代行</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>コミュニティ参加</li>
-                </ul>
-                <a href="#contact" class="cta-button w-full bg-yellow-400 text-gray-900 font-bold py-3 px-8 text-lg rounded-full hover:bg-yellow-500">
-                    無料相談に申し込む
+    <main>
+        <!-- ファーストビュー -->
+        <section class="hero-bg text-white">
+            <div class="container mx-auto px-4 sm:px-6 py-20 md:py-32 text-center">
+                <p class="text-brand-yellow font-bold text-lg mb-2">会社員から、自由なプロフェッショナルへ</p>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4 text-gray-50">
+                    <span class="block">年収の壁を壊し、時間の自由を手に入れる。</span>
+                    <span class="block">フリーランス営業専門コミュニティ</span>
+                </h1>
+                <p class="max-w-3xl mx-auto text-gray-300 text-base md:text-lg mb-8">
+                    「顧客資産」を積み上げ、年収1,000万円超えを本気で目指す。ウルサポは、あなたの独立と成功を全力で支援するプラットフォームです。
+                </p>
+                <a href="#contact" class="cta-button inline-block bg-brand-yellow text-gray-900 font-bold py-3 px-10 text-lg rounded-full hover:bg-brand-yellow-dark shadow-lg">
+                    まずは30分、人生を変える話を聞く
                 </a>
-                <p class="text-xs text-gray-500 mt-4">※1年契約/カード払い/初月解約保証あり</p>
+                <p class="mt-4 text-xs text-gray-400">無理な勧誘一切なし / 初月解約保証付き</p>
             </div>
-        </div>
-    </section>
-    
-    <!-- ご利用の流れ -->
-    <section class="py-16 md:py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-                ご利用開始までの<span class="yellow-highlight">かんたん4ステップ</span>
-            </h2>
-            <div class="relative">
-                <!-- Line -->
-                <div class="hidden md:block absolute top-1/2 -translate-y-1/2 left-0 w-full h-0.5 bg-gray-300"></div>
-                
-                <div class="grid md:grid-cols-4 gap-8 relative">
-                    <div class="text-center">
-                        <div class="relative">
-                            <div class="w-16 h-16 mx-auto bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-2xl">1</div>
-                        </div>
-                        <h3 class="font-bold mt-4 mb-2">お申し込み</h3>
-                        <p class="text-gray-600 text-sm">LINE公式から面談担当者へ連絡。契約手続きを進めます。</p>
+        </section>
+
+        <!-- Before/After -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">その働き方、<span class="text-brand-yellow">いつまで続けますか？</span></h2>
+                    <p class="mt-4 text-gray-600">多くのフリーランスが直面する厳しい現実。ウルサポがそのすべてを過去にします。</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 fade-in">
+                        <h3 class="text-2xl font-bold mb-4 text-red-500">BEFORE - 典型的なフリーランス</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start"><span class="text-red-500 font-bold mr-2">×</span><div><strong class="font-semibold">不安定な収入：</strong>毎月新規開拓に追われ、収入が安定しない。</div></li>
+                            <li class="flex items-start"><span class="text-red-500 font-bold mr-2">×</span><div><strong class="font-semibold">孤独な戦い：</strong>相談相手がおらず、一人で悩みや課題を抱え込む。</div></li>
+                            <li class="flex items-start"><span class="text-red-500 font-bold mr-2">×</span><div><strong class="font-semibold">成長の停滞：</strong>スキルアップの機会がなく、キャリアの先行きが不安。</div></li>
+                            <li class="flex items-start"><span class="text-red-500 font-bold mr-2">×</span><div><strong class="font-semibold">低い社会的信用：</strong>個人というだけで、足元を見られがち。</div></li>
+                        </ul>
                     </div>
-                    <div class="text-center">
-                        <div class="relative">
-                            <div class="w-16 h-16 mx-auto bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-2xl">2</div>
-                        </div>
-                        <h3 class="font-bold mt-4 mb-2">Kick Off MTG</h3>
-                        <p class="text-gray-600 text-sm">同期との出会い、そして新たな決意。あなたの挑戦が始まります。</p>
-                    </div>
-                     <div class="text-center">
-                        <div class="relative">
-                            <div class="w-16 h-16 mx-auto bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-2xl">3</div>
-                        </div>
-                        <h3 class="font-bold mt-4 mb-2">初月研修</h3>
-                        <p class="text-gray-600 text-sm">成功の土台作り。実践的な研修で、フリーランスとしての基礎を固めます。</p>
-                    </div>
-                     <div class="text-center">
-                        <div class="relative">
-                            <div class="w-16 h-16 mx-auto bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-2xl">4</div>
-                        </div>
-                        <h3 class="font-bold mt-4 mb-2">現場デビュー</h3>
-                        <p class="text-gray-600 text-sm">2ヶ月目から現場へ。研修と実践を繰り返し、3ヶ月目にはチームに所属し成果を飛躍させます。</p>
+                    <div class="bg-gray-900 text-white p-8 rounded-lg shadow-2xl fade-in">
+                        <h3 class="text-2xl font-bold mb-4 text-brand-yellow">AFTER - ウルサポのメンバー</h3>
+                        <ul class="space-y-3 text-gray-200">
+                            <li class="flex items-start"><span class="text-green-400 font-bold mr-2">✔</span><div><strong class="font-semibold text-white">安定した顧客資産：</strong>継続案件で収入が積み上がり、年収1,000万円も視野に。</div></li>
+                            <li class="flex items-start"><span class="text-green-400 font-bold mr-2">✔</span><div><strong class="font-semibold text-white">最高の仲間と環境：</strong>100人以上の仲間と支え合い、共に高め合える。</div></li>
+                            <li class="flex items-start"><span class="text-green-400 font-bold mr-2">✔</span><div><strong class="font-semibold text-white">プロへの成長：</strong>月100回以上の研修で、市場価値の高い専門性を習得。</div></li>
+                            <li class="flex items-start"><span class="text-green-400 font-bold mr-2">✔</span><div><strong class="font-semibold text-white">組織の信頼性：</strong>Vantage Pointの一員として、自信を持って活動できる。</div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- メッセージ -->
-    <section class="py-16 md:py-24 bg-gray-900 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">最後に、大切なこと。</h2>
-            <div class="max-w-3xl mx-auto">
-                <p class="text-lg mb-4">ウルサポは「楽して稼げる場所」ではありません。<br>毎月3万円払えば誰かが成功させてくれる、という考えの方は、ウルサポには合いません。</p>
-                <p class="text-yellow-400 text-2xl font-bold mb-6">ウルサポは「挑戦の場」です。</p>
-                <p class="text-lg">私たちは、本気で人生を変えたいと願い、そのために努力し続けるあなたのための「最高の環境」を提供します。自分の未来に本気で向き合い、行動し続ける覚悟がある方をお待ちしています。</p>
-                 <p class="text-lg mt-4">その覚悟は、誰のコミットメントによって示せますか？</p>
+        <!-- サービス内容 -->
+        <section class="py-16 md:py-24">
+             <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">ウルサポが提供する<span class="text-brand-yellow">成功への方程式</span></h2>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">フリーランスの課題を徹底的に分析し、成功に必要な8つの要素を網羅した唯一無二のプラットフォームです。</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">1. 顧客資産モデル</h3>
+                        <p class="text-sm text-gray-600">あなたの成果が資産になる。継続・リピート案件で安定収入を築きます。</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">2. 代理店販売サポート</h3>
+                        <p class="text-sm text-gray-600">売るものに困らない。HR領域を中心に、競争力の高い商材を提供します。</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">3. 営業・研修サポート</h3>
+                        <p class="text-sm text-gray-600">見込み客提供から案件相談まで。「売り方」を徹底的にサポートします。</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">4. 事務・雑務の代行</h3>
+                        <p class="text-sm text-gray-600">面倒な事務作業は丸投げOK。営業活動に100%集中できます。</p>
+                    </div>
+                     <!-- Feature 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">5. 活性化コミュニティ</h3>
+                        <p class="text-sm text-gray-600">孤独とは無縁。メタバースオフィスやオフ会で、刺激し合える仲間がいます。</p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">6. 信頼・信用の提供</h3>
+                        <p class="text-sm text-gray-600">ヴァンテージポイントの名刺や専門家サポートで、社会的信用を獲得します。</p>
+                    </div>
+                    <!-- Feature 7 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">7. 多彩なキャリアパス</h3>
+                        <p class="text-sm text-gray-600">プレイヤーからマネジメントまで。あなたの目指すキャリアを築けます。</p>
+                    </div>
+                    <!-- Feature 8 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 fade-in">
+                        <h3 class="text-lg font-bold mb-2">8. 労働集約からの脱却</h3>
+                        <p class="text-sm text-gray-600">専門知識で価値を生む働き方へ。時間と場所の自由を実現します。</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="py-16 md:py-24" id="contact">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">さあ、次はあなたの番です。</h2>
-            <p class="text-gray-600 text-lg mb-8">現状を変える一歩を、ここから踏み出しませんか？</p>
-            <a href="#" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-10 text-lg rounded-full hover:bg-yellow-500">
-                無料相談で未来を変える
-            </a>
-            <p class="mt-4 text-sm text-gray-500">無理な勧誘は一切ありません。まずはあなたの話を聞かせてください。</p>
-        </div>
-    </section>
+        <!-- お客様の声 -->
+        <section class="py-16 md:py-24 bg-gray-900 text-white">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold">理想を現実に変えた<span class="text-brand-yellow">メンバーの声</span></h2>
+                    <p class="mt-4 text-gray-300 max-w-2xl mx-auto">ウルサポで、仕事も人生も、もっと豊かに。</p>
+                </div>
 
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card rounded-lg p-6 flex flex-col fade-in">
+                        <div class="flex-grow">
+                            <p class="text-lg font-semibold text-gray-50 mb-2">「子供の行事に毎回参加できるのが、何よりの幸せです」</p>
+                            <p class="text-gray-300 text-sm">会社員時代は考えられなかった自由な時間管理が可能に。家族との時間を大切にしながら、しっかり稼げる環境に感謝しています。</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-700 flex items-center">
+                             <img src="[https://placehold.co/48x48/FBBF24/1F2937?text=M](https://placehold.co/48x48/FBBF24/1F2937?text=M)" class="w-12 h-12 rounded-full mr-4" alt="メンバーのプロフィール写真">
+                            <div>
+                                <p class="font-bold text-white">30代・一児のママ</p>
+                                <p class="text-sm text-brand-yellow">2024年報酬: 約650万円</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card rounded-lg p-6 flex flex-col fade-in">
+                         <div class="flex-grow">
+                            <p class="text-lg font-semibold text-gray-50 mb-2">「支社長として、仲間と大きな目標を追う毎日が楽しい」</p>
+                            <p class="text-gray-300 text-sm">個人の成功だけでなく、チームの成功に貢献できることに大きなやりがいを感じます。収入もキャリアも、青天井です。</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-700 flex items-center">
+                            <img src="[https://placehold.co/48x48/FBBF24/1F2937?text=S](https://placehold.co/48x48/FBBF24/1F2937?text=S)" class="w-12 h-12 rounded-full mr-4" alt="メンバーのプロフィール写真">
+                            <div>
+                                <p class="font-bold text-white">30代・既婚女性</p>
+                                <p class="text-sm text-brand-yellow">2024年報酬: 約1,100万円</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                     <div class="testimonial-card rounded-lg p-6 flex flex-col fade-in">
+                         <div class="flex-grow">
+                            <p class="text-lg font-semibold text-gray-50 mb-2">「8ヶ月で月収100万円達成。正しい努力は裏切らない」</p>
+                            <p class="text-gray-300 text-sm">未経験からのスタートでしたが、充実した研修とサポートのおかげで最速で結果を出せました。自分の可能性を信じてよかったです。</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-700 flex items-center">
+                            <img src="[https://placehold.co/48x48/FBBF24/1F2937?text=K](https://placehold.co/48x48/FBBF24/1F2937?text=K)" class="w-12 h-12 rounded-full mr-4" alt="メンバーのプロフィール写真">
+                            <div>
+                                <p class="font-bold text-white">30代・二児のママ</p>
+                                <p class="text-sm text-brand-yellow">8ヶ月目で月収100万円達成</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ご利用の流れ -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">成功へのロードマップ</h2>
+                    <p class="mt-4 text-gray-600">迷わず進める、体系化されたオンボーディングプロセス。</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <div class="space-y-8">
+                        <div class="relative pl-10 flow-step fade-in">
+                            <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-brand-yellow text-gray-900 rounded-full font-bold">1</div>
+                            <h3 class="text-xl font-bold mb-1">契約・手続き</h3>
+                            <p class="text-gray-600">LINEで簡単申込み。あなたの新しいキャリアがここから始まります。</p>
+                        </div>
+                        <div class="relative pl-10 flow-step fade-in">
+                            <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-brand-yellow text-gray-900 rounded-full font-bold">2</div>
+                            <h3 class="text-xl font-bold mb-1">Kick Off MTG & 初月研修</h3>
+                            <p class="text-gray-600">同期との出会い、そして成功の土台作り。プロとしてのマインドとスキルを徹底的に学びます。</p>
+                        </div>
+                        <div class="relative pl-10 flow-step fade-in">
+                            <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-brand-yellow text-gray-900 rounded-full font-bold">3</div>
+                            <h3 class="text-xl font-bold mb-1">現場デビュー & チーム検討</h3>
+                            <p class="text-gray-600">2ヶ月目から実践へ。学びながら経験を積み、自分に合ったチームを探します。</p>
+                        </div>
+                        <div class="relative pl-10 fade-in">
+                             <div class="absolute left-0 top-0 flex items-center justify-center w-10 h-10 bg-brand-yellow text-gray-900 rounded-full font-bold">4</div>
+                            <h3 class="text-xl font-bold mb-1">チーム所属 & 成果の飛躍</h3>
+                            <p class="text-gray-600">3ヶ月目からはチームの一員として活動。仲間と共に、個人の成果を最大化させます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 料金プラン & CTA -->
+        <section class="py-16 md:py-24" id="contact">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="bg-gray-900 rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl max-w-4xl mx-auto fade-in">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4">未来への投資を、今すぐ始めよう。</h2>
+                    <p class="text-gray-300 mb-8 max-w-xl mx-auto">最高の環境とサポートが、月々わずかな投資であなたのものに。人生を変えるのに、もう迷っている時間はありません。</p>
+
+                    <div class="inline-block bg-white/10 border border-white/20 rounded-lg p-6 mb-8">
+                        <h3 class="text-lg font-bold text-gray-50">ウルサポ年会費</h3>
+                        <p class="text-4xl md:text-5xl font-black my-2 text-brand-yellow">29,800<span class="text-lg font-bold text-gray-200">円/月</span></p>
+                        <p class="text-gray-400 text-sm">(税込 32,780円)</p>
+                    </div>
+
+                    <p class="text-sm font-semibold mb-6">初月で価値を感じなければ、<span class="text-brand-yellow">全額返金保証。</span>リスクなく挑戦できます。</p>
+                    
+                    <a href="#" class="cta-button inline-block bg-brand-yellow text-gray-900 font-bold py-4 px-12 text-xl rounded-full hover:bg-brand-yellow-dark shadow-lg">
+                        無料相談会に参加する
+                    </a>
+                    <p class="mt-4 text-xs text-gray-400">オンラインで30分 / あなたの疑問や不安に全てお答えします</p>
+                </div>
+            </div>
+        </section>
+    </main>
     <!-- フッター -->
     <footer class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <div class="mb-4">
-                <span class="text-xl font-bold">ウルサポ by ヴァンテージポイント株式会社</span>
+                <span class="text-lg font-bold">ウルサポ by ヴァンテージポイント株式会社</span>
             </div>
             <p class="text-sm text-gray-400">
                 本社：東京都品川区西品川1-1-1 住友不動産大崎ガーデンタワー9階 TINNELTOKYO
@@ -304,6 +299,22 @@
             <p class="text-xs text-gray-500 mt-4">&copy; 2025 vantage point Inc. All Rights Reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        // Simple fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
 
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
